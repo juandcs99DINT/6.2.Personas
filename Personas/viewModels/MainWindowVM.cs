@@ -14,7 +14,6 @@ namespace Personas.viewModels
     class MainWindowVM : ObservableObject
     {
         private readonly NavigationService navigationService;
-
         public MainWindowVM()
         {
             navigationService = new NavigationService();

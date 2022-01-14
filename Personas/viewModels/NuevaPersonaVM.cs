@@ -17,12 +17,14 @@ namespace Personas.viewModels
         public NuevaPersonaVM()
         {
             AñadirNacionalidadCommand = new RelayCommand(AbrirVentanaAñadirNacionalidad);
+            AceptarFormularioCommand = new RelayCommand(AceptarFormulario);
             navigationService = new NavigationService();
             datosService = new DatosService();
             ListaNacionalidades = datosService.RellenarListaNacionalidades();
         }
 
         public RelayCommand AñadirNacionalidadCommand { get; }
+        public RelayCommand AceptarFormularioCommand { get; }
 
         private ObservableCollection<string> listaNacionalidades;
         public ObservableCollection<string> ListaNacionalidades
@@ -31,6 +33,28 @@ namespace Personas.viewModels
             set => SetProperty(ref listaNacionalidades, value);
         }
 
+        private string nombrePersona;
+        public string NombrePersona
+        {
+            get => nombrePersona;
+            set => SetProperty(ref nombrePersona, value);
+        }
+
+        private string edadPersona;
+        public string EdadPersona
+        {
+            get => edadPersona;
+            set => SetProperty(ref edadPersona, value);
+        }
+
+        private string nacionalidadPersona;
+        public string NacionalidadPersona
+        {
+            get => nacionalidadPersona;
+            set => SetProperty(ref nacionalidadPersona, value);
+        }
+
         public void AbrirVentanaAñadirNacionalidad() => navigationService.AbrirVentanaNacionalidad();
+        public void AceptarFormulario() { }
     }
 }

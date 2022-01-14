@@ -13,14 +13,14 @@
     </UserControl.Resources>
     <StackPanel>
         <TextBlock>Nombre</TextBlock>
-        <TextBox></TextBox>
-        <TextBlock></TextBlock>
-        <TextBox></TextBox>
+        <TextBox Text="{Binding NombrePersona}"></TextBox>
+        <TextBlock>Edad</TextBlock>
+        <TextBox Text="{Binding EdadPersona}"></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <ComboBox Width="150" ItemsSource="{Binding ListaNacionalidades}"></ComboBox>
+            <ComboBox Width="150" ItemsSource="{Binding ListaNacionalidades}" SelectedItem="{Binding NacionalidadPersona}"></ComboBox>
             <Button Width="20" Margin="5,0,0,0" Command="{Binding AñadirNacionalidadCommand}">+</Button>
         </StackPanel>
-        <Button Command="{Binding AceptarCommand}" Width="150" Margin="0,5,0,0">Aceptar</Button>
+        <Button Command="{Binding AceptarFormularioCommand}" Width="150" Margin="0,5,0,0">Aceptar</Button>
     </StackPanel>
 </UserControl>

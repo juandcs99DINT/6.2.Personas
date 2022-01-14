@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Personas
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly MainWindowVM vm;

@@ -9,6 +9,13 @@ namespace Personas.viewModels
 {
     class AñadirNacionalidadVM : ObservableObject
     {
+        public AñadirNacionalidadVM() { }
 
+        private string nacionalidadNueva;
+        public string NacionalidadNueva
+        {
+            get => nacionalidadNueva;
+            set => SetProperty(ref nacionalidadNueva, value);
+        }
     }
 }

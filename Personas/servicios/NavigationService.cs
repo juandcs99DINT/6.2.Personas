@@ -10,7 +10,7 @@ namespace Personas.servicios
 {
     class NavigationService
     {
-        private static UserControl listadoPersonas = new ListadoPersonas();
+        private static readonly UserControl listadoPersonas = new ListadoPersonas();
         public NavigationService() { }
 
         public UserControl CambiarANuevaPersona() => new NuevaPersona();

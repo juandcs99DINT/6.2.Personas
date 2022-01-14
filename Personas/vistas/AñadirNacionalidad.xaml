@@ -12,12 +12,14 @@
             <Setter Property="Margin" Value="5,5,0,0"></Setter>
         </Style>
     </Window.Resources>
+
     <StackPanel Margin="10">
         <TextBlock>Nacionalidad</TextBlock>
-        <TextBox></TextBox>
+        <TextBox Text="{Binding NacionalidadNueva}"></TextBox>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <Button x:Name="AceptarButton" Click="AceptarButton_Click" IsDefault="True">Aceptar</Button>
             <Button IsCancel="True">Cancelar</Button>
         </StackPanel>
     </StackPanel>
+
 </Window>

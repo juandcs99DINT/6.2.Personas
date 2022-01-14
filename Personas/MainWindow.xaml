@@ -14,7 +14,7 @@
         <Style TargetType="{x:Type Border}" x:Key="UserControlBorder">
             <Setter Property="BorderThickness" Value="2"></Setter>
             <Setter Property="BorderBrush" Value="Black"></Setter>
-            
+            <Setter Property="Margin" Value="0,10,0,0"></Setter>
         </Style>
     </Window.Resources>
     <DockPanel Margin="10">
@@ -22,7 +22,7 @@
             <Button Command="{Binding CambiarANuevaPCommand}">Nueva persona</Button>
             <Button Margin="5,0,0,0" Command="{Binding CambiarAListadoCommand}">Listado de personas</Button>
         </StackPanel>
-        <Border Margin="0,10,0,0" Style="{StaticResource UserControlBorder}">
+        <Border Style="{StaticResource UserControlBorder}">
             <ContentControl Margin="10" Content="{Binding UserControlActual}"></ContentControl>
         </Border>
     </DockPanel>
