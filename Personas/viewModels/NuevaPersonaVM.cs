@@ -16,8 +16,8 @@ namespace Personas.viewModels
         private readonly NavigationService navigationService;
         public NuevaPersonaVM()
         {
-            navigationService = new NavigationService();
             AñadirNacionalidadCommand = new RelayCommand(AbrirVentanaAñadirNacionalidad);
+            navigationService = new NavigationService();
             datosService = new DatosService();
             ListaNacionalidades = datosService.RellenarListaNacionalidades();
         }
@@ -30,6 +30,7 @@ namespace Personas.viewModels
             get => listaNacionalidades;
             set => SetProperty(ref listaNacionalidades, value);
         }
+
         public void AbrirVentanaAñadirNacionalidad() => navigationService.AbrirVentanaNacionalidad();
     }
 }
