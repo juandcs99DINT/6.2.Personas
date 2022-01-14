@@ -11,19 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Personas
+namespace Personas.vistas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para NuevaPersona.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NuevaPersona : UserControl
     {
-        private readonly MainWindowVM vm;
-        public MainWindow()
+        private readonly NuevaPersonaVM vm;
+        public NuevaPersona()
         {
-            vm = new MainWindowVM();
+            vm = new NuevaPersonaVM();
             this.DataContext = vm;
             InitializeComponent();
         }

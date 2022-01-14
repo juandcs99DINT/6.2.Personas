@@ -1,5 +1,4 @@
-﻿using Personas.viewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,19 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Personas
+namespace Personas.vistas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para AñadirNacionalidad.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AñadirNacionalidad : Window
     {
-        private readonly MainWindowVM vm;
-        public MainWindow()
+        public AñadirNacionalidad()
         {
-            vm = new MainWindowVM();
-            this.DataContext = vm;
             InitializeComponent();
         }
+
+        private void AceptarButton_Click(object sender, RoutedEventArgs e) => DialogResult = true;
     }
 }
