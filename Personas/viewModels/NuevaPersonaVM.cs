@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using Personas.modelos;
 using Personas.servicios;
 using System;
 using System.Collections.Generic;
@@ -33,25 +34,11 @@ namespace Personas.viewModels
             set => SetProperty(ref listaNacionalidades, value);
         }
 
-        private string nombrePersona;
-        public string NombrePersona
+        private Persona nuevaPersona;
+        public Persona NuevaPersona
         {
-            get => nombrePersona;
-            set => SetProperty(ref nombrePersona, value);
-        }
-
-        private string edadPersona;
-        public string EdadPersona
-        {
-            get => edadPersona;
-            set => SetProperty(ref edadPersona, value);
-        }
-
-        private string nacionalidadPersona;
-        public string NacionalidadPersona
-        {
-            get => nacionalidadPersona;
-            set => SetProperty(ref nacionalidadPersona, value);
+            get => nuevaPersona;
+            set => SetProperty(ref nuevaPersona, value);
         }
 
         public void AbrirVentanaAñadirNacionalidad() => navigationService.AbrirVentanaNacionalidad();

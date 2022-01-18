@@ -8,15 +8,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate x:Key="PersonasDataTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>
-                        <Run Text="{Binding Path=Nombre}"></Run>
-                        <Run Text="-"></Run>
-                        <Run Text="{Binding Path=Edad}"></Run>
-                        <Run Text="-"></Run>
-                        <Run Text="{Binding Path=Nacionalidad}"></Run>
-                </TextBlock>
-            </StackPanel>
+            <TextBlock>
+                <Run Text="{Binding Path=Nombre}"></Run>
+                <Run Text="-"></Run>
+                <Run Text="{Binding Path=Edad}"></Run>
+                <Run Text="-"></Run>
+                <Run Text="{Binding Path=Nacionalidad}"></Run>
+            </TextBlock>
         </DataTemplate>
     </UserControl.Resources>
     <ListBox ItemsSource="{Binding ListaPersonas}" ItemTemplate="{StaticResource PersonasDataTemplate}"></ListBox>

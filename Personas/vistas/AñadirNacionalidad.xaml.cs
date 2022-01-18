@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Personas.viewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,11 @@ namespace Personas.vistas
     /// </summary>
     public partial class AñadirNacionalidad : Window
     {
+        private readonly AñadirNacionalidadVM vm;
         public AñadirNacionalidad()
         {
+            vm = new AñadirNacionalidadVM();
+            this.DataContext = vm;
             InitializeComponent();
         }
 

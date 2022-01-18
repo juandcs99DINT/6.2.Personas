@@ -16,8 +16,8 @@ namespace Personas.modelos
             set => SetProperty(ref nombre, value);
         }
 
-        private int edad;
-        public int Edad
+        private int? edad;
+        public int? Edad
         {
             get => edad;
             set => SetProperty(ref edad, value);

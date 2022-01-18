@@ -10,7 +10,6 @@ using System.Windows.Controls;
 
 namespace Personas.viewModels
 {
-
     class MainWindowVM : ObservableObject
     {
         private readonly NavigationService navigationService;
