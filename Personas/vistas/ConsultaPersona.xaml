@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Personas.vistas.NuevaPersona"
+﻿<UserControl x:Class="Personas.vistas.ConsultaPersona"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,17 +10,16 @@
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Margin" Value="0,10,0,0"></Setter>
         </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+        </Style>
     </UserControl.Resources>
     <StackPanel>
         <TextBlock>Nombre</TextBlock>
-        <TextBox Text="{Binding NuevaPersona.Nombre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Text="{Binding PersonaConsulta.Nombre}"></TextBox>
         <TextBlock>Edad</TextBlock>
-        <TextBox Text="{Binding NuevaPersona.Edad, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Text="{Binding PersonaConsulta.Edad}"></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
-        <StackPanel Orientation="Horizontal">
-            <ComboBox Width="150" ItemsSource="{Binding ListaNacionalidades}" SelectedItem="{Binding NuevaPersona.Nacionalidad}"></ComboBox>
-            <Button Width="20" Margin="5,0,0,0" Command="{Binding AñadirNacionalidadCommand}">+</Button>
-        </StackPanel>
-        <Button Command="{Binding AceptarFormularioCommand}" Width="150" Margin="0,5,0,0">Aceptar</Button>
+        <TextBox Text="{Binding PersonaConsulta.Nacionalidad}"></TextBox>
     </StackPanel>
 </UserControl>

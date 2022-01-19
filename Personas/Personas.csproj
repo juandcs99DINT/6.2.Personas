@@ -88,15 +88,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="servicios\Mensajes.cs" />
     <Compile Include="modelos\Persona.cs" />
     <Compile Include="servicios\DatosService.cs" />
     <Compile Include="servicios\NavigationService.cs" />
     <Compile Include="viewModels\AñadirNacionalidadVM.cs" />
+    <Compile Include="viewModels\ConsultaPersonaVM.cs" />
     <Compile Include="viewModels\ListadoPersonasVM.cs" />
     <Compile Include="viewModels\NuevaPersonaVM.cs" />
     <Compile Include="viewModels\MainWindowVM.cs" />
     <Compile Include="vistas\AñadirNacionalidad.xaml.cs">
       <DependentUpon>AñadirNacionalidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\ConsultaPersona.xaml.cs">
+      <DependentUpon>ConsultaPersona.xaml</DependentUpon>
     </Compile>
     <Compile Include="vistas\ListadoPersonas.xaml.cs">
       <DependentUpon>ListadoPersonas.xaml</DependentUpon>
@@ -146,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="vistas\AñadirNacionalidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\ConsultaPersona.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,5 +17,5 @@
             </TextBlock>
         </DataTemplate>
     </UserControl.Resources>
-    <ListBox ItemsSource="{Binding ListaPersonas}" ItemTemplate="{StaticResource PersonasDataTemplate}"></ListBox>
+    <ListBox ItemsSource="{Binding ListaPersonas}" ItemTemplate="{StaticResource PersonasDataTemplate}" SelectedItem="{Binding PersonaSeleccionada}"></ListBox>
 </UserControl>

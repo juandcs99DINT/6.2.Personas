@@ -1,13 +1,10 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using Personas.modelos;
 using Personas.servicios;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Personas.Mensajes;
 
 namespace Personas.viewModels
 {
@@ -21,7 +18,9 @@ namespace Personas.viewModels
             AceptarFormularioCommand = new RelayCommand(AceptarFormulario);
             navigationService = new NavigationService();
             datosService = new DatosService();
-            ListaNacionalidades = datosService.RellenarListaNacionalidades();
+            NuevaPersona = new Persona();
+            ListaNacionalidades = datosService.GetNacionalidades();
+            RegistrarNacionalidadNueva();
         }
 
         public RelayCommand AñadirNacionalidadCommand { get; }
@@ -42,6 +41,14 @@ namespace Personas.viewModels
         }
 
         public void AbrirVentanaAñadirNacionalidad() => navigationService.AbrirVentanaNacionalidad();
-        public void AceptarFormulario() { }
+        public void RegistrarNacionalidadNueva()
+        {
+            WeakReferenceMessenger.Default.Register<NacionalidadAñadidaMessage>(this, (r, m) =>
+            {
+                datosService.AñadirNacionalidad(m.Value);
+                ListaNacionalidades = datosService.GetNacionalidades();
+            });
+        }
+        public void AceptarFormulario() => WeakReferenceMessenger.Default.Send(new PersonaAñadidaMessage(NuevaPersona));
     }
 }

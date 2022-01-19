@@ -21,6 +21,7 @@
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Button Command="{Binding CambiarANuevaPCommand}">Nueva persona</Button>
             <Button Margin="5,0,0,0" Command="{Binding CambiarAListadoCommand}">Listado de personas</Button>
+            <Button Margin="5,0,0,0" Command="{Binding CambiarAConsultaPCommand}">Consulta persona</Button>
         </StackPanel>
         <Border Style="{StaticResource UserControlBorder}">
             <ContentControl Margin="10" Content="{Binding UserControlActual}"></ContentControl>

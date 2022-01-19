@@ -31,7 +31,7 @@ namespace Personas.modelos
         }
 
         public Persona() { }
-        public Persona(string nombre, int edad, string nacionalidad)
+        public Persona(string nombre, int? edad, string nacionalidad)
         {
             this.nombre = nombre;
             this.edad = edad;

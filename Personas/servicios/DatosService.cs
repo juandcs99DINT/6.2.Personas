@@ -10,24 +10,35 @@ namespace Personas.servicios
 {
     class DatosService
     {
+        private readonly ObservableCollection<string> listaNacionalidades;
+        private readonly ObservableCollection<Persona> listaPersonas;
+        public DatosService()
+        {
+            listaNacionalidades = RellenarListaNacionalidades();
+            listaPersonas = RellenarListaPersonas();
+        }
+
         public ObservableCollection<Persona> RellenarListaPersonas()
         {
-            ObservableCollection<Persona> listaPersonas = new ObservableCollection<Persona>()
+            return new ObservableCollection<Persona>()
             {
                 new Persona("Pietro", 30, "Italiana"),
                 new Persona("Julia", 25, "Española"),
                 new Persona("Sophie", 35, "Francesa")
             };
-            return listaPersonas;
         }
-
         public ObservableCollection<string> RellenarListaNacionalidades()
         {
-            ObservableCollection<string> listaNacionalidades = new ObservableCollection<string>()
+            return new ObservableCollection<string>()
             {
                "Italiana", "Española", "Francesa"
             };
-            return listaNacionalidades;
         }
+
+        public void AñadirNacionalidad(string nacionalidad) => listaNacionalidades.Add(nacionalidad);
+        public void AñadirPersona(Persona persona) => listaPersonas.Add(persona);
+
+        public ObservableCollection<string> GetNacionalidades() => listaNacionalidades;
+        public ObservableCollection<Persona> GetPersonas() => listaPersonas;
     }
 }

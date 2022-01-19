@@ -15,11 +15,14 @@ namespace Personas.servicios
 
         public UserControl CambiarANuevaPersona() => new NuevaPersona();
         public UserControl CambiarAListado() => listadoPersonas;
+        public UserControl CambiarAConsultaPersona() => new ConsultaPersona();
 
         public void AbrirVentanaNacionalidad()
         {
             AñadirNacionalidad añadirNacionalidad = new AñadirNacionalidad();
             añadirNacionalidad.ShowDialog();
         }
+
+
     }
 }

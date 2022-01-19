@@ -18,6 +18,7 @@ namespace Personas.viewModels
             navigationService = new NavigationService();
             CambiarANuevaPCommand = new RelayCommand(CambiarANuevaPersona);
             CambiarAListadoCommand = new RelayCommand(CambiarAListado);
+            CambiarAConsultaPCommand = new RelayCommand(CambiarAConsultaPersona);
         }
 
         private UserControl userControlActual;
@@ -29,7 +30,10 @@ namespace Personas.viewModels
 
         public RelayCommand CambiarANuevaPCommand { get; }
         public RelayCommand CambiarAListadoCommand { get; }
+        public RelayCommand CambiarAConsultaPCommand { get; }
+
         public void CambiarANuevaPersona() => UserControlActual = navigationService.CambiarANuevaPersona();
         public void CambiarAListado() => UserControlActual = navigationService.CambiarAListado();
+        public void CambiarAConsultaPersona() => UserControlActual = navigationService.CambiarAConsultaPersona();
     }
 }

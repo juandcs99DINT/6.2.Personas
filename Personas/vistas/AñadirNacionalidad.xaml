@@ -17,7 +17,7 @@
         <TextBlock>Nacionalidad</TextBlock>
         <TextBox Text="{Binding NacionalidadNueva}"></TextBox>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button x:Name="AceptarButton" Click="AceptarButton_Click" IsDefault="True">Aceptar</Button>
+            <Button x:Name="AceptarButton" Command="{Binding AceptarCommand}" Click="AceptarButton_Click" IsDefault="True">Aceptar</Button>
             <Button IsCancel="True">Cancelar</Button>
         </StackPanel>
     </StackPanel>

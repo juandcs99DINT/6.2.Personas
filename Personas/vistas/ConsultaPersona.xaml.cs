@@ -11,22 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Personas.vistas
 {
-    /// <summary>
-    /// Lógica de interacción para AñadirNacionalidad.xaml
-    /// </summary>
-    public partial class AñadirNacionalidad : Window
+    public partial class ConsultaPersona : UserControl
     {
-        private readonly AñadirNacionalidadVM vm;
-        public AñadirNacionalidad()
+        private readonly ConsultaPersonaVM vm;
+        public ConsultaPersona()
         {
-            vm = new AñadirNacionalidadVM();
+            vm = new ConsultaPersonaVM();
             this.DataContext = vm;
             InitializeComponent();
         }
-        private void AceptarButton_Click(object sender, RoutedEventArgs e) => DialogResult = true;
     }
 }
