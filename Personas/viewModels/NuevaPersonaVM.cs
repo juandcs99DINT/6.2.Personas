@@ -4,7 +4,6 @@ using Microsoft.Toolkit.Mvvm.Messaging;
 using Personas.modelos;
 using Personas.servicios;
 using System.Collections.ObjectModel;
-using static Personas.Mensajes;
 
 namespace Personas.viewModels
 {

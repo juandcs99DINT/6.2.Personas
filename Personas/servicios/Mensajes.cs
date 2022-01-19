@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 
 namespace Personas
 {
-    class Mensajes
+    class NacionalidadAñadidaMessage : ValueChangedMessage<string>
     {
-        public class NacionalidadAñadidaMessage : ValueChangedMessage<string>
-        {
-            public NacionalidadAñadidaMessage(string nacionalidad) : base(nacionalidad) { }
-        }
-
-        public class PersonaAñadidaMessage : ValueChangedMessage<Persona>
-        {
-            public PersonaAñadidaMessage(Persona persona) : base(persona) { }
-        }
-
-        public class PersonaConsultaMessage : RequestMessage<Persona> { }
+        public NacionalidadAñadidaMessage(string nacionalidad) : base(nacionalidad) { }
     }
+    class PersonaAñadidaMessage : ValueChangedMessage<Persona>
+    {
+        public PersonaAñadidaMessage(Persona persona) : base(persona) { }
+    }
+    class PersonaConsultaMessage : RequestMessage<Persona> { }
+
 }
