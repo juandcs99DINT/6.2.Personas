@@ -18,7 +18,7 @@ namespace Personas.viewModels
             navigationService = new NavigationService();
             datosService = new DatosService();
             NuevaPersona = new Persona();
-            ListaNacionalidades = datosService.GetNacionalidades();
+            ListaNacionalidades = datosService.RellenarListaNacionalidades();
             RegistrarNacionalidadNueva();
         }
 
@@ -44,8 +44,7 @@ namespace Personas.viewModels
         {
             WeakReferenceMessenger.Default.Register<NacionalidadAñadidaMessage>(this, (r, m) =>
             {
-                datosService.AñadirNacionalidad(m.Value);
-                ListaNacionalidades = datosService.GetNacionalidades();
+                ListaNacionalidades.Add(m.Value);
             });
         }
         public void AceptarFormulario() => WeakReferenceMessenger.Default.Send(new PersonaAñadidaMessage(NuevaPersona));

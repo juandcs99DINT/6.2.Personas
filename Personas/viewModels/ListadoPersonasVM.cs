@@ -17,7 +17,7 @@ namespace Personas.viewModels
         public ListadoPersonasVM()
         {
             datosService = new DatosService();
-            ListaPersonas = datosService.GetPersonas();
+            ListaPersonas = datosService.RellenarListaPersonas();
             EsperarPersonaNueva();
             EnviarPersonaSeleccionada();
         }
@@ -40,8 +40,7 @@ namespace Personas.viewModels
         {
             WeakReferenceMessenger.Default.Register<PersonaAñadidaMessage>(this, (r, m) =>
             {
-                datosService.AñadirPersona(m.Value);
-                ListaPersonas = datosService.GetPersonas();
+                ListaPersonas.Add(m.Value);
             });
         }
 
