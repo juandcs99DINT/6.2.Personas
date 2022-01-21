@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personas"
+        xmlns:properties="clr-namespace:Personas.Properties"
         mc:Ignorable="d"
         Title="Personas" Height="450" Width="800" Icon="assets/personas.ico">
     <Window.Resources>
@@ -23,6 +24,10 @@
             <Button Margin="5,0,0,0" Command="{Binding CambiarAListadoCommand}">Listado de personas</Button>
             <Button Margin="5,0,0,0" Command="{Binding CambiarAConsultaPCommand}">Consulta persona</Button>
         </StackPanel>
+        <TextBlock DockPanel.Dock="Bottom">
+            <Run Text="Versión:"></Run>
+            <Run Text="{Binding Source={x:Static properties:Settings.Default}, Path=Version, Mode=OneWay}"/>
+        </TextBlock>
         <Border Style="{StaticResource UserControlBorder}">
             <ContentControl Margin="10" Content="{Binding UserControlActual}"></ContentControl>
         </Border>

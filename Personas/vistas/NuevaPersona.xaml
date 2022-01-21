@@ -5,22 +5,44 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Personas.vistas"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF">
     <UserControl.Resources>
-        <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Margin" Value="0,10,0,0"></Setter>
+        <Style TargetType="{x:Type inputLayout:SfTextInputLayout}">
+            <Setter Property="Margin" Value="0,25,0,0"></Setter>
         </Style>
     </UserControl.Resources>
     <StackPanel>
-        <TextBlock>Nombre</TextBlock>
-        <TextBox Text="{Binding NuevaPersona.Nombre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBlock>Edad</TextBlock>
-        <TextBox Text="{Binding NuevaPersona.Edad, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBlock>Nacionalidad</TextBlock>
+        <inputLayout:SfTextInputLayout Hint="Nombre"
+                                       HintFloatMode="Float"
+                                       HelperText="Nombre de la persona">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="../assets/person.png"></Image>
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding NuevaPersona.Nombre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Edad"
+                                       HintFloatMode="Float"
+                                       HelperText="Edad de la persona">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="../assets/cake.png"></Image>
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding NuevaPersona.Edad, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </inputLayout:SfTextInputLayout>
+
         <StackPanel Orientation="Horizontal">
-            <ComboBox Width="150" ItemsSource="{Binding ListaNacionalidades}" SelectedItem="{Binding NuevaPersona.Nacionalidad}"></ComboBox>
-            <Button Width="20" Margin="5,0,0,0" Command="{Binding AñadirNacionalidadCommand}">+</Button>
+            <inputLayout:SfTextInputLayout Hint="Nacionalidad"
+                                       HintFloatMode="Float"
+                                       HelperText="Nacionalidad de la persona">
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="../assets/world.png"></Image>
+                </inputLayout:SfTextInputLayout.LeadingView>
+                <ComboBox Width="150" ItemsSource="{Binding ListaNacionalidades}" SelectedItem="{Binding NuevaPersona.Nacionalidad}"></ComboBox>
+            </inputLayout:SfTextInputLayout>
+            <Button Width="30" Height="30" Margin="5,0,0,0" Command="{Binding AñadirNacionalidadCommand}">+</Button>
         </StackPanel>
+
         <Button Command="{Binding AceptarFormularioCommand}" Width="150" Margin="0,5,0,0">Aceptar</Button>
     </StackPanel>
 </UserControl>
